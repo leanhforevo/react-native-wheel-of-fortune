@@ -257,6 +257,11 @@ class WheelOfFortune extends Component {
               })}
             </G>
           </AnimatedSvg>
+          <View style={{
+            width:100,height:100,
+            backgroundColor:'#fff',position:'absolute',borderRadius:'120',overflow:'hidden'}}>
+            <Image source={this.props.options.logoApp} style={{width:100,height:100,backgroundColor:'#fff',}} resizeMode={'cover'}/>
+          </View>
         </Animated.View>
       </View>
     );
@@ -313,7 +318,7 @@ class WheelOfFortune extends Component {
             source={
               this.props.options.knobSource
                 ? this.props.options.knobSource
-                : require('../assets/images/knob.png')
+                : require('../assets/images/demo.png')
             }
             style={{ width: knobSize, height: (knobSize * 100) / 57 }}
           />
@@ -342,7 +347,8 @@ class WheelOfFortune extends Component {
             height: height / 2,
             justifyContent: 'center',
             alignItems: 'center',
-          }}>
+          }}
+          activeOpacity={1}>
           <Animated.View style={[styles.content, {padding: 10}]}>
             {this._renderSvgWheel()}
           </Animated.View>
